@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+ <html lang="en" 
+ th:replace="~{base ::parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title data-th-text="${loggedInUser.name}+' | SCM  ' ">Profile Page</title>
+</head> 
+<body>
+    <div id="content">
+
+        <!-- if user logged in :sidebar -->
+    <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}">
+
+        </div>
+    </div>
+    <div  class="sm:pl-64 pt-20" style="height: 1000px">
+
+        <div class="flex justify-center flex-col items-center">
+            <h1 class="text-5xl">Welcome to profile page</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate illum, doloribus nihil modi odio, exercitationem quis odit ex mollitia dolorum expedita sapiente quod harum reprehenderit qui, officiis quia ducimus unde!</p>
+        
+        </div>
+    </div>
+</div>
+    <script>
+        console.log("this is profile page");
+    </script>
+    
+     <!-- npx tailwindcss -i src/main/resources/static/css/input.css -o src/main/resources/static/css/output.css --watch  -->
+
+    
+    
+     
+</html>
